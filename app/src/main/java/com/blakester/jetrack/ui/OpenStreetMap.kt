@@ -125,42 +125,6 @@ fun OpenStreetMap(lat: Double, lon: Double) {
                         .build()
                     mapplsMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
                 }
-
-//                if (previousLatLng == null || previousLatLng != currentLatLng) {
-//                    // Remove old ones
-//                    previousMarker?.let { mapplsMap.removeMarker(it) }
-//
-//                    // Draw line from previous to current location (if previous exists)
-//                    val polyline = previousLatLng?.let { prev ->
-//                        mapplsMap.addPolyline(
-//                            com.mappls.sdk.maps.annotations.PolylineOptions()
-//                                .add(prev)
-//                                .add(currentLatLng)
-//                                .color(android.graphics.Color.BLUE)
-//                                .width(5f)
-//                        )
-//                    }
-//
-//                    // Add new marker at current location
-//                    val marker = mapplsMap.addMarker(
-//                        MarkerOptions()
-//                            .position(currentLatLng)
-//                            .title("Current Location")
-//                            .snippet("Lat: $lat, Lon: $lon")
-//                    )
-//
-//                    // Animate camera
-//                    val cameraPosition = CameraPosition.Builder()
-//                        .target(currentLatLng)
-//                        .zoom(5.0)
-//                        .tilt(0.0)
-//                        .build()
-//                    mapplsMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
-//
-//                    // Save new references
-//                    previousLatLng = currentLatLng
-//                    previousMarker = marker
-//                }
             }
 
             override fun onMapError(p0: Int, p1: String) {

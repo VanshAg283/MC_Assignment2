@@ -15,14 +15,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
-import androidx.compose.ui.focus.FocusRequester
-import androidx.compose.ui.focus.focusRequester
-import androidx.compose.ui.focus.FocusManager
 import androidx.compose.ui.platform.LocalFocusManager
 import com.blakester.jetrack.viewmodel.FlightViewModel
+import androidx.navigation.NavController
 
 @Composable
-fun FlightTrackerScreen() {
+fun FlightTrackerScreen(navController: NavController) {
     val flightViewModel: FlightViewModel = viewModel()
     val state by flightViewModel.flightState.collectAsState()
     val context = LocalContext.current

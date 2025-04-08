@@ -11,6 +11,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.google.maps)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -30,6 +32,8 @@ android {
         resValue("string", "mappls_map_sdk_key", localProperties["MAPPLS_MAP_SDK_KEY"] as String)
         resValue("string", "mappls_client_id", localProperties["MAPPLS_CLIENT_ID"] as String)
         resValue("string", "mappls_client_secret", localProperties["MAPPLS_CLIENT_SECRET"] as String)
+        resValue("string", "FLIGHTSTATS_APP_ID", localProperties["FLIGHTSTATS_APP_ID"] as String)
+        resValue("string", "FLIGHTSTATS_APP_KEY", localProperties["FLIGHTSTATS_APP_KEY"] as String)
     }
 
     buildTypes {
@@ -54,7 +58,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,6 +74,15 @@ dependencies {
     implementation(libs.moshi.kotlin)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.mappls.android.sdk)
+    implementation(libs.maps.compose)
+    implementation(libs.play.services.maps)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.navigation.compose)
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.androidx.work.runtime.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
