@@ -59,4 +59,8 @@ class FlightViewModel(
             error = null
         )
     }
+
+    fun clearError() {
+        _flightState.update { it.copy(error = null) }
+    }
 }

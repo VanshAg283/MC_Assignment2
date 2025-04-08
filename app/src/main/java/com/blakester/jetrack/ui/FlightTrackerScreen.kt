@@ -46,6 +46,17 @@ fun FlightTrackerScreen(navController: NavController) {
         }
     }
 
+    LaunchedEffect(state.error) {
+        if (state.error != null) {
+            isTracking = false
+            flightViewModel.stopTracking()
+
+            // Delay and then clear error
+            kotlinx.coroutines.delay(2000)
+            flightViewModel.clearError()  // You’ll need to add this in your ViewModel
+        }
+    }
+
     Column(
         modifier = Modifier
             .fillMaxSize()

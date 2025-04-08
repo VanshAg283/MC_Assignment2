@@ -66,9 +66,10 @@ fun WeeklyDurationScreen(navController: NavController, viewModel: FlightDataView
                     items(averageDurations) { entry ->
                         Card(
                             modifier = Modifier.fillMaxWidth(),
-                            colors = CardDefaults.cardColors(
-                                containerColor = MaterialTheme.colorScheme.surfaceVariant
-                            )
+                            elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+//                            colors = CardDefaults.cardColors(
+//                                containerColor = MaterialTheme.colorScheme.surfaceVariant
+//                            )
                         ) {
                             Column(modifier = Modifier.padding(16.dp)) {
                                 Text(
